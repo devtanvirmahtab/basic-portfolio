@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tanvir Mahtab – Flutter &amp; React Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: { bg:'var(--bg)', ink:'var(--ink)', muted:'var(--muted)', card:'var(--card)', line:'var(--line)', brand:'var(--brand)', onbrand:'var(--onbrand)', hi:'var(--hi)' },
+    fontFamily: {
+      display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      body: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+    }
+  } }
+}
+</script>
+<style>
+  :root { --bg:#F4F6FB; --ink:#0F1B3D; --muted:#55608A; --card:#FFFFFF; --line:#DDE2F0; --brand:#2D4BFF; --onbrand:#FFFFFF; --hi:#FFD84D; color-scheme: light;
+    box-sizing: border-box; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#0E1424; --ink:#E8ECF8; --muted:#9AA4C0; --card:#151C30; --line:#26304D; --brand:#7D91FF; --onbrand:#0E1424; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg:#0E1424; --ink:#E8ECF8; --muted:#9AA4C0; --card:#151C30; --line:#26304D; --brand:#7D91FF; --onbrand:#0E1424; color-scheme: dark; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+  .mark { background: linear-gradient(transparent 62%, var(--hi) 62%); }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+  .in-1 { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  .in-2 { animation: rise .7s .15s cubic-bezier(.2,.7,.2,1) both; }
+  .in-3 { animation: rise .7s .3s cubic-bezier(.2,.7,.2,1) both; }
+  @media (prefers-reduced-motion: reduce) { .in-1,.in-2,.in-3 { animation: none; } html { scroll-behavior: auto; } }
+  .code span { white-space: pre; }
+  .k { color: var(--brand); } .s { color: #12906B; } .c { color: var(--muted); }
+</style>
+</head>
+<body class="antialiased">
+
+<header class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex flex-wrap items-center justify-between gap-3">
+  <a href="#top" class="font-display font-extrabold text-xl tracking-tight">Tanvir Mahtab</a>
+  <nav class="flex items-center gap-5 text-sm text-muted" aria-label="Main">
+    <a class="hover:text-ink" href="#skills">Skills</a>
+    <a class="hover:text-ink" href="#work">Projects</a>
+    <a class="hover:text-ink" href="#experience">Experience</a>
+    <a class="rounded-full bg-brand text-onbrand px-4 py-2 font-medium" href="#contact">Hire me</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-5 sm:px-8 pt-10 pb-20 grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center">
+    <div class="in-1">
+      <p class="text-muted text-base mb-5">Mid-level software engineer · 4 years of experience</p>
+      <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+        I build apps that feel <span class="mark">right</span> on a phone and on the web.
+      </h1>
+      <p class="mt-6 text-lg text-muted max-w-xl leading-relaxed">
+        I’m Tanvir. I turn ideas into fast, tidy Flutter apps and React interfaces, with clean code behind every screen.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#work" class="rounded-full bg-brand text-onbrand px-6 py-3 font-medium">See my projects</a>
+        <a href="#contact" class="rounded-full border border-line bg-card px-6 py-3 font-medium">Send a message</a>
+      </div>
+    </div>
+
+    <!-- Phone + browser composition -->
+    <div class="relative h-[420px] sm:h-[460px] in-2" aria-hidden="true">
+      <div class="absolute left-0 top-6 right-8 sm:right-16 rounded-2xl border border-line bg-card shadow-xl overflow-hidden">
+        <div class="flex items-center gap-1.5 px-4 py-3 border-b border-line">
+          <i class="w-2.5 h-2.5 rounded-full bg-[#FF6B5E]"></i><i class="w-2.5 h-2.5 rounded-full bg-hi"></i><i class="w-2.5 h-2.5 rounded-full bg-[#3BC47A]"></i>
+          <span class="ml-3 text-xs text-muted">Profile.jsx</span>
+        </div>
+        <pre class="code p-4 text-[12px] sm:text-[13px] leading-6 overflow-hidden font-mono"><span><span class="k">export default function</span> Profile() {</span>
+<span>  <span class="k">const</span> [role] = useState(<span class="s">"Engineer"</span>);</span>
+<span>  <span class="k">return</span> (</span>
+<span>    &lt;main className=<span class="s">"p-6"</span>&gt;</span>
+<span>      &lt;h1&gt;Tanvir Mahtab&lt;/h1&gt;</span>
+<span>      &lt;p&gt;{role}&lt;/p&gt;</span>
+<span>    &lt;/main&gt;</span>
+<span>  );</span>
+<span>}</span>
+<span class="c">// works on web</span></pre>
+      </div>
+
+      <div class="absolute right-0 bottom-0 w-[170px] sm:w-[190px] rounded-[2rem] border-[6px] border-ink bg-bg shadow-2xl overflow-hidden in-3">
+        <div class="bg-brand text-onbrand px-4 pt-6 pb-3 text-sm font-medium">My Tasks</div>
+        <div class="p-3 space-y-2.5">
+          <div class="rounded-xl bg-card border border-line p-3"><div class="h-2 w-3/4 rounded bg-ink/80"></div><div class="h-2 w-1/2 rounded bg-muted/50 mt-2"></div></div>
+          <div class="rounded-xl bg-card border border-line p-3"><div class="h-2 w-2/3 rounded bg-ink/80"></div><div class="h-2 w-5/6 rounded bg-muted/50 mt-2"></div></div>
+          <div class="rounded-xl bg-card border border-line p-3"><div class="h-2 w-1/2 rounded bg-ink/80"></div><div class="h-2 w-2/3 rounded bg-muted/50 mt-2"></div></div>
+        </div>
+        <div class="flex justify-end p-3"><div class="w-10 h-10 rounded-2xl bg-hi flex items-center justify-center text-[#0F1B3D] text-xl font-bold">+</div></div>
+        <div class="text-center text-[10px] text-muted pb-2">Flutter app</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="max-w-6xl mx-auto px-5 sm:px-8 py-16">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">What I work with</h2>
+    <p class="mt-3 text-muted max-w-xl">Mobile and web, from first screen to final polish.</p>
+    <div class="mt-10 grid md:grid-cols-3 gap-5">
+      <div class="rounded-3xl border border-line bg-card p-7">
+        <h3 class="font-display font-bold text-xl">Mobile</h3>
+        <p class="mt-2 text-sm text-muted">Smooth, native-feeling apps for Android and iOS.</p>
+        <ul class="mt-5 flex flex-wrap gap-2 text-sm">
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">Flutter</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">Dart</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">State management</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-line bg-card p-7">
+        <h3 class="font-display font-bold text-xl">Web</h3>
+        <p class="mt-2 text-sm text-muted">Responsive interfaces that load fast and read well.</p>
+        <ul class="mt-5 flex flex-wrap gap-2 text-sm">
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">React</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">JavaScript</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">HTML</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">CSS</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-line bg-card p-7">
+        <h3 class="font-display font-bold text-xl">How I build</h3>
+        <p class="mt-2 text-sm text-muted">Habits that keep projects easy to change.</p>
+        <ul class="mt-5 flex flex-wrap gap-2 text-sm">
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">Reusable components</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">API integration</li>
+          <li class="rounded-full bg-bg border border-line px-3 py-1.5">Responsive layouts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects (replace with your real projects) -->
+  <section id="work" class="max-w-6xl mx-auto px-5 sm:px-8 py-16">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Selected projects</h2>
+    <div class="mt-10 grid lg:grid-cols-3 gap-6">
+      <article class="lg:col-span-2 rounded-3xl bg-brand text-onbrand p-8 sm:p-10 flex flex-col justify-between min-h-[280px]">
+        <div>
+          <p class="text-sm opacity-80">Flutter · Mobile app</p>
+          <h3 class="font-display font-extrabold text-3xl mt-3">Project name</h3>
+          <p class="mt-4 max-w-lg opacity-90 leading-relaxed">Write one or two sentences here: what the app does, who uses it, and the result you delivered.</p>
+        </div>
+        <a href="#contact" class="mt-8 inline-block self-start rounded-full bg-hi text-[#0F1B3D] px-5 py-2.5 font-medium text-sm">View case study</a>
+      </article>
+      <article class="rounded-3xl border border-line bg-card p-8 flex flex-col justify-between">
+        <div>
+          <p class="text-sm text-muted">React · Web dashboard</p>
+          <h3 class="font-display font-bold text-2xl mt-3">Project name</h3>
+          <p class="mt-3 text-muted leading-relaxed">Describe the problem you solved and the tools you used.</p>
+        </div>
+        <a href="#contact" class="mt-6 text-sm font-medium text-brand underline underline-offset-4">View case study</a>
+      </article>
+      <article class="rounded-3xl border border-line bg-card p-8 flex flex-col justify-between">
+        <div>
+          <p class="text-sm text-muted">HTML, CSS · Tailwind</p>
+          <h3 class="font-display font-bold text-2xl mt-3">Project name</h3>
+          <p class="mt-3 text-muted leading-relaxed">A responsive website or landing page you designed and built.</p>
+        </div>
+        <a href="#contact" class="mt-6 text-sm font-medium text-brand underline underline-offset-4">View live site</a>
+      </article>
+      <article class="lg:col-span-2 rounded-3xl border border-dashed border-line p-8 flex items-center">
+        <p class="text-muted max-w-md leading-relaxed">Have a project in mind? I’m happy to talk about mobile apps, web apps, or both together.</p>
+        <a href="#contact" class="ml-auto shrink-0 rounded-full border border-line bg-card px-5 py-2.5 text-sm font-medium">Start a conversation</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Experience (replace with your real roles) -->
+  <section id="experience" class="max-w-6xl mx-auto px-5 sm:px-8 py-16">
+    <h2 class="font-display font-bold text-3xl sm:text-4xl tracking-tight">Experience</h2>
+    <ol class="mt-10 border-l-2 border-line ml-2 space-y-10">
+      <li class="pl-7 relative">
+        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brand border-4 border-bg"></span>
+        <p class="text-sm text-muted">2024 – Present</p>
+        <h3 class="font-display font-bold text-xl mt-1">Software Engineer, Company name</h3>
+        <p class="mt-2 text-muted max-w-2xl leading-relaxed">Building Flutter apps and React interfaces. Add the main things you shipped and the impact they had.</p>
+      </li>
+      <li class="pl-7 relative">
+        <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-line border-4 border-bg"></span>
+        <p class="text-sm text-muted">2022 – 2024</p>
+        <h3 class="font-display font-bold text-xl mt-1">Junior Software Engineer, Company name</h3>
+        <p class="mt-2 text-muted max-w-2xl leading-relaxed">Built web pages with HTML, CSS, and JavaScript, and moved into Flutter and React development.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-6xl mx-auto px-5 sm:px-8 py-16">
+    <div class="rounded-3xl bg-ink text-bg p-8 sm:p-14">
+      <h2 class="font-display font-extrabold text-3xl sm:text-5xl tracking-tight max-w-2xl leading-tight">Let’s build something people enjoy using.</h2>
+      <p class="mt-4 max-w-xl opacity-80">I’m open to new roles and freelance work. Send me a short note and I’ll reply soon.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="mailto:you@example.com" class="rounded-full bg-hi text-[#0F1B3D] px-6 py-3 font-medium">Email Tanvir</a>
+        <a href="https://github.com/" class="rounded-full border border-current px-6 py-3 font-medium">GitHub</a>
+        <a href="https://www.linkedin.com/" class="rounded-full border border-current px-6 py-3 font-medium">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="max-w-6xl mx-auto px-5 sm:px-8 py-8 text-sm text-muted flex flex-wrap justify-between gap-2">
+  <span>© <span id="yr">2026</span> Tanvir Mahtab</span>
+  <a href="#top" class="hover:text-ink">Back to top</a>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
